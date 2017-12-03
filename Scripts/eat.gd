@@ -5,10 +5,13 @@ extends RigidBody2D
 var name = ""
 var value = 0
 var colliders = []
+var timer = null
 
 func _ready():
 	set_contact_monitor(true)
 	set_max_contacts_reported(1)
+	
+	
 	for c in get_children():
 		if c extends Sprite:
 			name = c.get_name()
@@ -28,5 +31,10 @@ func _fixed_process(delta):
 				if col_value != null:
 					if value % col_value == 1:
 #						set_pos(col.get_global_pos()) PLAY DEATH ANIM
-						body.get_name()
+						var player = get_tree().get_root().get_node("Top/Center/WinCon/Player")
+						player.play("eaten")
+						player.connect("finished",self,"_lost")
 						body.queue_free()
+
+func _lost():
+	get_tree().reload_current_scene()

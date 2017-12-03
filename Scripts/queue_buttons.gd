@@ -11,10 +11,13 @@ func _ready():
 	queue = global_var.queue[str(global_var.level)]
 	if queue.size() > 0:
 		for animal in queue:
+			
 			var button = button_ref.instance()
 			button.set("animal_name", animal)
 			button.set_pos(Vector2(-offset*(order%4),y_offset))
 			add_child(button)
+			if animal == "snake":
+				order += 1
 			order += 1
 			if order > 3:
 				y_offset -= 160

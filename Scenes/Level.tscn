@@ -1,11 +1,12 @@
-[gd_scene load_steps=9 format=1]
+[gd_scene load_steps=10 format=1]
 
 [ext_resource path="res://Scripts/text_change.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/queue_buttons.gd" type="Script" id=2]
 [ext_resource path="res://Sprites/test-icc.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/win_condition.gd" type="Script" id=4]
 [ext_resource path="res://Sprites/line.png" type="Texture" id=5]
-[ext_resource path="res://Scenes/youwin.tres" type="Animation" id=6]
+[ext_resource path="res://Scenes/eaten.tres" type="Animation" id=6]
+[ext_resource path="res://Sprites/cat.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -215,6 +216,7 @@ offset = Vector2( 0, 24 )
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
+anims/eaten = ExtResource( 6 )
 anims/youwin = ExtResource( 6 )
 playback/active = true
 playback/speed = 1.0
@@ -223,8 +225,8 @@ autoplay = ""
 
 [node name="WinPlate" type="Sprite" parent="Center/WinCon"]
 
-transform/pos = Vector2( 10.7071, 594.218 )
-texture = ExtResource( 3 )
+transform/pos = Vector2( -326.552, 584.403 )
+texture = ExtResource( 7 )
 modulate = Color( 0.835938, 0.368988, 0.368988, 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
