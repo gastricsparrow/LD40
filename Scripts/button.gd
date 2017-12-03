@@ -1,6 +1,6 @@
 extends TextureButton
 
-var animal_name = "lion"
+var animal_name = ""
 var sprite = null
 var scale = Vector2()
 var animal = null
@@ -8,7 +8,11 @@ var pet_cursor = null
 var current_pet = null
 
 func _ready():
-	sprite = load("res://Sprites/"+animal_name+".png")
+	if animal_name != "":
+		sprite = load("res://Sprites/"+animal_name+".png")
+	else:
+		print("Failed to load animal")
+		pass
 	scale = get_scale()
 	set_normal_texture(sprite)
 	set_process_input(true)
@@ -23,16 +27,9 @@ func _input(event):
 		pet_cursor = get_node("../../Center/PetCursor")
 		for child in pet_cursor.get_children():
 			child.queue_free()
-		animal = load("res://Scenes/"+animal_name+".tscn").instance()
-		animal.set_gravity_scale(0)
-		animal.set_name("Current")
-		pet_cursor.add_child(animal)
+		if animal_name != null:
+			animal = load("res://Scenes/"+animal_name+".tscn").instance()
+			animal.set_gravity_scale(0)
+			animal.set_name("Current")
+			pet_cursor.add_child(animal)
 		
-func find_node_by_name(root, name):
-	for child in root.get_children():
-		if(child.get_name().contains(name)):
-			return child
-		var found = find_node_by_name(child, name)
-		if(found):
-			return found
-	return null
