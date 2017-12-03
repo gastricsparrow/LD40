@@ -9,9 +9,11 @@ var value = 0
 func _ready():
 	for c in get_children():
 		if c extends Sprite:
-        	name = c.get_name()
+			name = c.get_name()
+		print (name)
 	if name != "":
 		value = global_var.food_chain[name]
+		print(value)
 	set_fixed_process(true)
 	
 func _fixed_process(delta):
