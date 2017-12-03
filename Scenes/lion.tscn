@@ -1,0 +1,110 @@
+[gd_scene load_steps=11 format=1]
+
+[ext_resource path="res://Sprites/lion.png" type="Texture" id=1]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 32.313, 27.3381, 26.6869, 32.0264, 21.4776, 35.7772, 16.2683, 39.4237, 9.49619, 43.2786, 1.57803, 45.779, -4.67314, 43.4869, -13.9457, 38.6944, 36.6888, 21.0869 )
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -38.9504, -31.5271, -33.3244, -37.9867, -25.7188, -42.1541, -16.4462, -45.4881, -8.42384, -45.9048, -2.27686, -43.3002, -33.4285, 22.1288, -39.263, 15.4608, -41.1383, 6.18826, -43.6388, -22.4629 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -41.1383, 6.18826, -46.0351, -1.72989, -46.3476, -10.169, -43.6388, -22.4629 )
+
+[sub_resource type="ConvexPolygonShape2D" id=4]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -29.2611, 28.6925, -33.4285, 22.1288, -2.27686, -43.3002, -23.7392, 32.0264 )
+
+[sub_resource type="ConvexPolygonShape2D" id=5]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -13.9457, 38.6944, -17.5922, 37.0274, -23.7392, 32.0264, -2.27686, -43.3002, 4.18269, -45.4881, 14.2887, -45.5923, 24.0823, -42.5709, 31.4795, -37.049, 35.3344, -31.5271 )
+
+[sub_resource type="ConvexPolygonShape2D" id=6]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -13.9457, 38.6944, 35.3344, -31.5271, 38.7725, -28.4016, 41.273, -22.8797, 40.9604, -19.0248 )
+
+[sub_resource type="ConvexPolygonShape2D" id=7]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -13.9457, 38.6944, 40.9604, -19.0248, 44.1902, -11.1066, 45.5446, -2.14663, 45.4404, 4.52129, 44.1902, 7.54269, 42.419, 9.7306 )
+
+[sub_resource type="ConvexPolygonShape2D" id=8]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -13.9457, 38.6944, 42.419, 9.7306, 40.4395, 16.8153, 36.6888, 21.0869 )
+
+[sub_resource type="ConvexPolygonShape2D" id=9]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -13.9457, 38.6944, -4.67314, 43.4869, -10.5076, 41.7158 )
+
+[node name="Lion" type="RigidBody2D"]
+
+input/pickable = true
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+shapes/1/shape = SubResource( 2 )
+shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/1/trigger = false
+shapes/2/shape = SubResource( 3 )
+shapes/2/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/2/trigger = false
+shapes/3/shape = SubResource( 4 )
+shapes/3/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/3/trigger = false
+shapes/4/shape = SubResource( 5 )
+shapes/4/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/4/trigger = false
+shapes/5/shape = SubResource( 6 )
+shapes/5/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/5/trigger = false
+shapes/6/shape = SubResource( 7 )
+shapes/6/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/6/trigger = false
+shapes/7/shape = SubResource( 8 )
+shapes/7/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/7/trigger = false
+shapes/8/shape = SubResource( 9 )
+shapes/8/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/8/trigger = false
+collision/layers = 1
+collision/mask = 1
+mode = 0
+mass = 100.0
+friction = 1.0
+bounce = 0.1
+gravity_scale = 3.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+velocity/linear = Vector2( 0, 0 )
+velocity/angular = 0.0
+damp_override/linear = -1.0
+damp_override/angular = -1.0
+
+[node name="lion" type="Sprite" parent="."]
+
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+
+build_mode = 0
+polygon = Vector2Array( -2.27686, -43.3002, -8.42384, -45.9048, -16.4462, -45.4881, -25.7188, -42.1541, -33.3244, -37.9867, -38.9504, -31.5271, -43.6388, -22.4629, -46.3476, -10.169, -46.0351, -1.72989, -41.1383, 6.18826, -39.263, 15.4608, -33.4285, 22.1288, -29.2611, 28.6925, -23.7392, 32.0264, -17.5922, 37.0274, -13.9457, 38.6944, -10.5076, 41.7158, -4.67314, 43.4869, 1.57803, 45.779, 9.49619, 43.2786, 16.2683, 39.4237, 21.4776, 35.7772, 26.6869, 32.0264, 32.313, 27.3381, 36.6888, 21.0869, 40.4395, 16.8153, 42.419, 9.7306, 44.1902, 7.54269, 45.4404, 4.52129, 45.5446, -2.14663, 44.1902, -11.1066, 40.9604, -19.0248, 41.273, -22.8797, 38.7725, -28.4016, 35.3344, -31.5271, 31.4795, -37.049, 24.0823, -42.5709, 14.2887, -45.5923, 4.18269, -45.4881 )
+shape_range = Vector2( 0, 8 )
+trigger = false
+
+

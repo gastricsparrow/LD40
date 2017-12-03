@@ -2,14 +2,13 @@
 
 extends RigidBody2D
 
-const RIGIDBODY_SPEED = 2000 # set a smaller value for slower rigidbody movement
-
 var is_dragging = false
 var mouse_is_over = false
 var keydown_mouseleft = false
 var mousepoint = Vector2(0,0)
 var mouse_distance
 var rigidbody_vector = 0
+var gravity = 98
 
 
 func _ready():
@@ -40,7 +39,7 @@ func _fixed_process(delta):
 
     if not keydown_mouseleft or not mouse_is_over:
         is_dragging = false
-        self.set_linear_velocity(Vector2())
+        self.set_linear_velocity(Vector2(0, gravity))
 
 
 func _on_RigidBody2D_mouse_enter():

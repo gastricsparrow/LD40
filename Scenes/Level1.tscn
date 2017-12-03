@@ -26,16 +26,54 @@ margin/right = 0.0
 margin/bottom = -3.0
 color = Color( 0.422343, 0.453125, 0.415955, 1 )
 
+[node name="Panel" type="Panel" parent="BG"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 74.0
+margin/top = 47.0
+margin/right = 682.0
+margin/bottom = 361.0
+
+[node name="Label" type="Label" parent="BG/Panel"]
+
+rect/scale = Vector2( 2, 2 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 8.0
+margin/top = 8.0
+margin/right = 304.0
+margin/bottom = 157.0
+custom_colors/font_color = Color( 0.8125, 0.986816, 1, 1 )
+custom_constants/line_spacing = 1
+text = "HE LLO WOlrd
+Hello?
+
+FJISADJI
+testing
+testing
+THING JUST GOT
+MORE interesting
+djiosjdiosajd
+dsajidas "
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
 [node name="Center" type="Position2D" parent="."]
 
-transform/pos = Vector2( 500, 320 )
+transform/pos = Vector2( 980, 350 )
 
 [node name="Wall" type="Node2D" parent="Center"]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Center/Wall"]
 
-editor/display_folded = true
 transform/pos = Vector2( 0, 300 )
+transform/scale = Vector2( 0.8, 1 )
 input/pickable = false
 shapes/0/shape = SubResource( 4 )
 shapes/0/transform = Matrix32( 19.4672, 0, 0, 2.84473, 0, 0 )
@@ -67,7 +105,7 @@ modulate = Color( 0.441406, 0.387955, 0.387955, 1 )
 [node name="StaticBody2D1" type="StaticBody2D" parent="Center/Wall"]
 
 editor/display_folded = true
-transform/pos = Vector2( 275, 0 )
+transform/pos = Vector2( 90, 0 )
 transform/rot = 90.0
 input/pickable = false
 shapes/0/shape = SubResource( 4 )
@@ -99,8 +137,7 @@ modulate = Color( 0.441406, 0.387955, 0.387955, 1 )
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Center/Wall"]
 
-editor/display_folded = true
-transform/pos = Vector2( -275, 0 )
+transform/pos = Vector2( -90, 0 )
 transform/rot = 90.0
 input/pickable = false
 shapes/0/shape = SubResource( 4 )
@@ -130,7 +167,9 @@ transform/scale = Vector2( 0.17132, 1.74084 )
 texture = ExtResource( 1 )
 modulate = Color( 0.441406, 0.387955, 0.387955, 1 )
 
-[node name="Pets" type="Node2D" parent="Center"]
+[node name="Pets" type="Position2D" parent="Center"]
+
+transform/pos = Vector2( 0, -275 )
 
 [node name="Cat" parent="Center/Pets" instance=ExtResource( 2 )]
 
@@ -140,6 +179,10 @@ transform/pos = Vector2( 73.4719, -143.604 )
 
 [node name="Mouse" parent="Center/Pets" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( -104.364, -120.227 )
+transform/pos = Vector2( -23.6304, -89.5687 )
+
+[node name="Queue" type="Position2D" parent="."]
+
+transform/pos = Vector2( 500, 200 )
 
 
