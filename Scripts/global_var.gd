@@ -19,9 +19,20 @@ const food_chain = {
 	"cthulhu": 1
 }
 
-const levels = {
-	"1": ["mouse", "dog", "cat"],
-	"2": ["wolf", "cat", "dog", "parrot"]
+const queue = {
+	"1": ["mouse", "cat", "dog"],
+	"2": ["wolf", "cat", "dog", "parrot"],
+	"3": ["mouse", "frog", "chicken", "fox", "cat"]
+}
 
+const win_con = {
+	"1": 60,
+	"2": 5,
+	"3": -20
+}
 
+const text_guide = {
+	"1": "1. Cat eats mouse",
+	"2": "1. Cat eats parrot \n 2. Wolf eats dog and cat",
+	"3": "Fuck off"
 }

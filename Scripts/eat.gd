@@ -28,4 +28,5 @@ func _fixed_process(delta):
 				if col_value != null:
 					if value % col_value == 1:
 #						set_pos(col.get_global_pos()) PLAY DEATH ANIM
+						body.get_name()
 						body.queue_free()
