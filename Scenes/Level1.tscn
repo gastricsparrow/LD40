@@ -1,16 +1,18 @@
-[gd_scene load_steps=6 format=1]
+[gd_scene load_steps=8 format=1]
 
 [ext_resource path="res://Sprites/test-icc.png" type="Texture" id=1]
-[ext_resource path="res://Scenes/cat.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/dog.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/mouse.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scripts/interaction.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/cat.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/dog.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/mouse.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/button.tscn" type="PackedScene" id=6]
 
 [sub_resource type="RectangleShape2D" id=4]
 
 custom_solver_bias = 0.0
 extents = Vector2( 15.5651, 10 )
 
-[node name="Node" type="Node"]
+[node name="Top" type="Node"]
 
 [node name="BG" type="ColorFrame" parent="."]
 
@@ -167,22 +169,71 @@ transform/scale = Vector2( 0.17132, 1.74084 )
 texture = ExtResource( 1 )
 modulate = Color( 0.441406, 0.387955, 0.387955, 1 )
 
-[node name="Pets" type="Position2D" parent="Center"]
+[node name="PetCursor" type="Position2D" parent="Center"]
 
 transform/pos = Vector2( 0, -275 )
+script/script = ExtResource( 2 )
 
-[node name="Cat" parent="Center/Pets" instance=ExtResource( 2 )]
+[node name="Cat" parent="Center/PetCursor" instance=ExtResource( 3 )]
 
-[node name="Dog" parent="Center/Pets" instance=ExtResource( 3 )]
+[node name="Dog" parent="Center/PetCursor" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 73.4719, -143.604 )
 
-[node name="Mouse" parent="Center/Pets" instance=ExtResource( 4 )]
+[node name="Mouse" parent="Center/PetCursor" instance=ExtResource( 5 )]
 
 transform/pos = Vector2( -23.6304, -89.5687 )
 
 [node name="Queue" type="Position2D" parent="."]
 
-transform/pos = Vector2( 500, 200 )
+transform/pos = Vector2( 600, 600 )
+
+[node name="TextureButton" parent="Queue" instance=ExtResource( 6 )]
+
+margin/left = -46.0
+margin/top = -46.0
+margin/right = 154.0
+margin/bottom = 154.0
+
+[node name="TextureButton1" parent="Queue" instance=ExtResource( 6 )]
+
+margin/left = -216.0
+margin/top = -47.0
+margin/right = -16.0
+margin/bottom = 153.0
+
+[node name="TextureButton2" parent="Queue" instance=ExtResource( 6 )]
+
+margin/left = -381.0
+margin/top = -46.0
+margin/right = -181.0
+margin/bottom = 154.0
+
+[node name="TextureButton3" parent="Queue" instance=ExtResource( 6 )]
+
+margin/left = -543.0
+margin/top = -46.0
+margin/right = -343.0
+margin/bottom = 154.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+offset = Vector2( 640, 360 )
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit/left = -10000000
+limit/top = -10000000
+limit/right = 10000000
+limit/bottom = 10000000
+drag_margin/h_enabled = true
+drag_margin/v_enabled = true
+smoothing/enable = false
+smoothing/speed = 5.0
+drag_margin/left = 0.2
+drag_margin/top = 0.2
+drag_margin/right = 0.2
+drag_margin/bottom = 0.2
 
 

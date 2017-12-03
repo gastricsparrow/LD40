@@ -2,7 +2,7 @@ extends Node
 
 var level = 1
 
-# FOOOD CHAINNNN '' aka I'm definitely over complicating this''
+# FOOD CHAIN '' aka I'm definitely over complicating this''
 # One rule: If A % B == 1: A eats B
 # PRIME + 1 = non-predator
 const food_chain = {
@@ -17,4 +17,11 @@ const food_chain = {
 	"snake": 19, # ---frog + mouse
 	"lion": 2151409, # everything but frog and parrot
 	"cthulhu": 1
+}
+
+const levels = {
+	"1": ["mouse", "dog", "cat"],
+	"2": ["wolf", "cat", "dog", "parrot"]
+
+
 }
