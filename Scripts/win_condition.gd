@@ -38,8 +38,9 @@ func _on_body_enter(id, body, body_shape, area_shape):
 func _on_body_exit(id, body, body_shape, area_shape):
 	if body != null:
 		if body extends RigidBody2D:
-			in_zone.erase(str(id))
-			print(id, " leaves ", in_zone)
+			if in_zone.has(str(id)):
+				in_zone.erase(str(id))
+				print(id, " leaves ", in_zone)
 
 func _on_timeout():
 	print("tick")
@@ -54,5 +55,6 @@ func _on_timeout():
 	timer_no += 1
 
 func _win():
-	global_var.level += 1
+	if global_var.level < 5:
+		global_var.level += 1
 	get_tree().reload_current_scene()

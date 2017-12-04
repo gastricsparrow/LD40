@@ -23,24 +23,22 @@ const queue = {
 	"1": ["mouse", "cat", "dog"],
 	"2": ["wolf", "cat", "dog", "parrot"],
 	"3": ["cat", "frog", "chicken", "fox", "lion"],
-	"4": ["snake", "fox", "wolf", "cat", "mouse", "parrot"]
+	"4": ["snake", "fox", "wolf", "cat", "mouse", "parrot"],
+	"5": []
 }
 
 const win_con = {
 	"1": 60,
 	"2": 5,
 	"3": -50,
-	"4": -125
+	"4": -125,
+	"5": -180
 }
 
 const text_guide = {
-	"1": "1. Cat eats mouse",
-	"2": "1. Cat eats parrot\n2. Wolf eats dog & cat",
-	"3": "1. Fox eats chicken & frog\n2. Lion eats cat, chicken, fox",
-	"4": "1. Cat eats mouse & parrot\n2. Fox eats mouse.\n3. Snake eats mouse\n4. Wolf eats cat & mouse"
-}
-
-const width = {
-	"1": 1, "2": 1, "3": 1,
-	"4": 2
+	"1": "LEVEL 1\nClick the pet you want to let in.\nFill the house up to the line with pets.\nRemember:\n1. Cat eats Mouse.",
+	"2": "LEVEL 2\n1. Cat eats Parrot.\n2. Wolf eats Dog & Cat.",
+	"3": "LEVEL 3\n1. Fox eats Chicken & Frog.\n2. Lion eats Cat, Chicken & Fox.",
+	"4": "LEVEL 4\n1. Cat eats Mouse & Parrot.\n2. Fox eats Mouse.\n3. Snake eats Mouse.\n4. Wolf eats Cat & Mouse.",
+	"5": "FINAL ENDLESS RANDOMIZED LEVEL\n\n\n\n\n\n\n\n\n\nThank you for playing!"
 }

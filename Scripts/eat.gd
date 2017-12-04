@@ -31,9 +31,14 @@ func _fixed_process(delta):
 				if col_value != null:
 					if value % col_value == 1:
 #						set_pos(col.get_global_pos()) PLAY DEATH ANIM
-						var player = get_tree().get_root().get_node("Top/Center/WinCon/Player")
+						var win_con = get_tree().get_root().get_node("Top/Center/WinCon")
+						var player = win_con.get_node("Player")
+#						var label = win_con.get_node("WinPlate")
+#						label.set_texture(load("res://Sprites/failed.png"))
+#						label.get_node("ColorFrame").set_frame_color(Color(0.6,0,0))
 						player.play("eaten")
 						player.connect("finished",self,"_lost")
+						get_tree().get_root().get_node("Top/Sample").play("Gulp")
 						body.queue_free()
 
 func _lost():
